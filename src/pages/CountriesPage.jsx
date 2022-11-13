@@ -5,31 +5,37 @@ import { Stack } from '@mui/material'
 import { Layout } from '../components/layout'
 import { CountryGrid } from '../components/country'
 import { SearchByCountry, SearchByRegion} from '../components/search'
-import { Spinner } from '../components/ui'
+import { PaginationUI, Spinner } from '../components/ui'
 
 import { CountriesContext } from '../context/countries'
 import { UIContext } from '../context/ui'
 
-import { formatCountriesData, getCountries } from '../helpers'
+import { formatCountriesData, getCountries, getPagination } from '../helpers'
 
 export const CountriesPage = () => {
 
-  const { setCountries, selectedRegion } = useContext( CountriesContext );
+  const { setCountries, setPagination, setPage, selectedRegion, page, pagination } = useContext( CountriesContext );
   const { setIsLoading, isLoading } = useContext( UIContext )
 
   useEffect( () => {
-
+    setPage(0);
     setCountries([]);
-    setIsLoading( true );
 
     getCountries(`https://restcountries.com/v3.1/region/${selectedRegion}`)
       .then( data => {
-        const countries = formatCountriesData( data );
-        setCountries( countries )
-      })
 
-    setIsLoading( false );
+        setIsLoading( true );
+        const countries = formatCountriesData( data );
+        setPagination( getPagination( countries ));
+
+      })
+      .finally( () => setIsLoading( false ) );
+
   }, [selectedRegion] );
+
+  useEffect( () => {
+    setCountries( pagination[page] );
+  }, [ pagination ] )
 
   return (
     <Layout>
@@ -38,6 +44,8 @@ export const CountriesPage = () => {
         <SearchByCountry />
         <SearchByRegion />
       </Stack>
+
+      <PaginationUI />
 
       {
         isLoading 

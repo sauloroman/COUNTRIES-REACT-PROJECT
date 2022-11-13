@@ -6,7 +6,6 @@ export const init = () => {
   return { themeUI, isLoading: true }
 }
 
-
 export const UIProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer( uireducer, {}, init );

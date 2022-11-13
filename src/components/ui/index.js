@@ -1,2 +1,3 @@
-export * from './Navbar';
-export * from './spinner/Spinner'
+export * from "./Navbar";
+export * from "./PaginationUI";
+export * from "./spinner/Spinner";

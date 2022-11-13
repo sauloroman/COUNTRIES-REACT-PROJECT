@@ -25,16 +25,15 @@ export const CountryPage = () => {
   useEffect( () => {
 
     setCountry({})
-    setIsLoading( true );
 
     getCountries(`https://restcountries.com/v3.1/alpha/${code}`)
       .then( data => {
+        setIsLoading( true );
         const country = !!data && data[0];
         const dataCountry = formatCountryData( country );
         setCountry( dataCountry )
       })
-    
-    setIsLoading( false )
+      .finally( () => setIsLoading( false ))
 
   }, [code] );
 

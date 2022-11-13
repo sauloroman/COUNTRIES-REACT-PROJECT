@@ -3,8 +3,10 @@ import { CountriesContext, countriesreducer } from "./"
 
 const COUNTRIES_INITIAL_STATE = {
   countries: [], 
+  pagination: [],
   country: {},
-  selectedRegion: 'america'
+  selectedRegion: 'america',
+  page: 0,
 }
 
 export const CountriesProvider = ({ children }) => {
@@ -23,6 +25,14 @@ export const CountriesProvider = ({ children }) => {
     dispatch({ type: '[COUNTRIES] - SetRegion', payload: region })
   }
 
+  const setPage = ( page ) => {
+    dispatch({ type: '[COUNTRIES] - SetPage', payload: page })
+  }
+
+  const setPagination = ( pagination ) => {
+    dispatch({ type: '[COUNTRIES] - SetPagination', payload: pagination })
+  } 
+
   return (
     <CountriesContext.Provider value={{
       ...state,
@@ -30,7 +40,9 @@ export const CountriesProvider = ({ children }) => {
       // METHODS
       setCountries,
       setCountry,
-      setSelectedRegion
+      setSelectedRegion,
+      setPage,
+      setPagination
     }}>
       {children}
     </CountriesContext.Provider>

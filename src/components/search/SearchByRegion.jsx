@@ -14,10 +14,10 @@ export const SearchByRegion = () => {
         <InputLabel>Filter by Region</InputLabel>
 
         <Select
+          sx={{ boxShadow: '0 5px 5px rgba(0, 0, 0, 0.05)', width: 250, maxWidth: '100%' }}
           value={ selectedRegion }
           onChange={ e => setSelectedRegion( e.target.value ) }
           color="primary"
-          sx={{ my: 1, maxWidth: "100%", width: 450 }}
         >
           <MenuItem value="africa">Africa</MenuItem>
           <MenuItem value="america">America</MenuItem>

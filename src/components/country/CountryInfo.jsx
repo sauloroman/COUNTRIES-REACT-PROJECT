@@ -10,7 +10,10 @@ export const CountryInfo = () => {
   const { country } = useContext( CountriesContext )
   const { onGoCountryPage } = useNavigatePage();
   
-  const { borders, capital, name, flag, coatOfArms, lat, lng, officialName, population, region, subregion, tld} = country;
+  const { borders, capital, name, flag, coatOfArms, lat, lng, officialName, population, region, subregion, tld, languages, currencies} = country;
+
+  const langString = languages && Object.values( languages ).join(', ');
+  const curreArr = currencies && Object.values( currencies );
 
   return (
     <Grid 
@@ -85,16 +88,16 @@ export const CountryInfo = () => {
 
               <Box display="flex" gap={1} mb={2}>
                 <Typography variant="body1" fontWeight={600}>Languages:</Typography>
-                {/* <Typography component="span">{languagesString}</Typography> */}
+                <Typography component="span">{ langString }</Typography>
               </Box>
 
               <Box display="flex" gap={1}>
                 <Typography variant="body1" fontWeight={600}>Currencies:</Typography>
-                {/* {
-                  currenciesArr?.map( ({ name }) => (
+                {
+                  curreArr?.map( ({ name }) => (
                     <Typography key={ name } component="span">{ name }</Typography>
                   ))
-                } */}
+                } 
               </Box>
             </Grid>
           </Grid>
@@ -129,7 +132,7 @@ export const CountryInfo = () => {
             <Box
               component="img"
               src={ coatOfArms }
-              sx={{ width: 200, maxWidth: "20%" }}
+              sx={{ width: 200, maxWidth: "30%" }}
             />
         </Grid>
       </Grid>
