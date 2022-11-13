@@ -1,10 +1,13 @@
-import { UIProvider } from "./context"
+import { CountriesProvider } from "./context/countries"
+import { UIProvider } from "./context/ui"
 import { ThemeApp } from "./themes"
 
 export const CountriesApp = () => {
   return (
-    <UIProvider>
-      <ThemeApp />
-    </UIProvider>
+    <CountriesProvider>
+      <UIProvider>
+        <ThemeApp />
+      </UIProvider>
+    </CountriesProvider>
   )
 }

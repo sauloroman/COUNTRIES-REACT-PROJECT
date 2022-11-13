@@ -10,6 +10,11 @@ export const uireducer = ( state, action ) => {
         ...state,
         themeUI: "light"
       }
+    case '[UI] - SetIsLoading':
+      return {
+        ...state,
+        isLoading: action.payload
+      }
     default:
       return state
   }

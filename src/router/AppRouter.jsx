@@ -6,7 +6,7 @@ export const AppRouter = () => {
     <HashRouter>
       <Routes>
         <Route path="/" element={ <CountriesPage /> }/>
-        <Route path="/:name" element={ <CountryPage /> }/>
+        <Route path="/:code" element={ <CountryPage /> }/>
       </Routes>
     </HashRouter>
   )

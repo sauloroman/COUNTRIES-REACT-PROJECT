@@ -1,3 +1,4 @@
+import { Container } from "@mui/material"
 import { Navbar } from "../ui"
 
 export const Layout = ({ children }) => {
@@ -5,7 +6,9 @@ export const Layout = ({ children }) => {
     <>
       <Navbar />
 
-      { children }
+      <Container maxWidth="xl" sx={{ mt: 18, mb: 5}}>      
+        { children }
+      </Container>
     </>
   )
 }
