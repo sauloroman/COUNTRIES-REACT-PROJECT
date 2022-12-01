@@ -6,7 +6,13 @@ This application shows information of countries around the world. You can filter
 
 In addition, it has pagination to appreciate better each country when we scroll in the application and it has integrated a dark mode to change the ui which it is save at local storage to change it only when the user wants to do it. 
 
-It's important to mention that this could be used to learn, since you find information about their capital, population, location, languages, etc.   
+It's important to mention that this could be used to learn, since you find information about their capital, population, location, languages, etc.  
+
+You can check its funtionality in: 
+
+```
+https://countriessrsn.netlify.app/#/
+```
 
 The API used to get the information of the countries is called REST Countries where you can find in:
 
