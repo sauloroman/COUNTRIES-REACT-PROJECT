@@ -8,7 +8,13 @@ In addition, it has pagination to appreciate better each country when we scroll 
 
 It's important to mention that this could be used to learn, since you find information about their capital, population, location, languages, etc.   
 
-## ***Techonologies, implementations and services used***
+The API used to get the information of the countries is called REST Countries where you can find in:
+
+```
+https://restcountries.com/
+```
+
+## ***Techonologies, dependencies and services used***
 
   * ReactJs
   * JavaScript
@@ -19,6 +25,7 @@ It's important to mention that this could be used to learn, since you find infor
   * Custom Hooks ( useForm, useNavigatePage )
   * Netlify
   * Local Storage
+  * Fetch API
 
 Node was used to carry out this project, so, you must have in your system this language. Specifically version **16.16.0** 
 
