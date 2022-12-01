@@ -4,7 +4,7 @@
 
 This application shows information of countries around the world. You can filter by their continent and even, you can look for a specific country by writing its name. It has multiple pages to navigate and it was developed following the "Mobile First" principle.
 
-In addition, it has pagination to appreciate better each country when we scroll in the application and it has integrated a dark mode to change the ui. 
+In addition, it has pagination to appreciate better each country when we scroll in the application and it has integrated a dark mode to change the ui which it is save at local storage to change it only when the user wants to do it. 
 
 It's important to mention that this could be used to learn, since you find information about their capital, population, location, languages, etc.   
 
@@ -18,6 +18,7 @@ It's important to mention that this could be used to learn, since you find infor
   * Hooks ( useState, useEffect, useLocation, useContext, useReducer )
   * Custom Hooks ( useForm, useNavigatePage )
   * Netlify
+  * Local Storage
 
 Node was used to carry out this project, so, you must have in your system this language. Specifically version **16.16.0** 
 
